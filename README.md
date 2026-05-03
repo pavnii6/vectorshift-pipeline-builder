@@ -1,70 +1,153 @@
-# Getting Started with Create React App
+# 🚀 VectorShift Pipeline Builder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern **node-based pipeline builder** built with **React (React Flow)** and **FastAPI**, enabling users to visually construct workflows and validate them as a **Directed Acyclic Graph (DAG)** in real time.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+### 🧩 Node Abstraction
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Built a reusable **BaseNode component**
+* Eliminates code duplication across nodes
+* Easily extendable — added custom nodes:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  * Math Node
+  * Filter Node
+  * API Node
+  * Logger Node
+  * Delay Node
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🎨 Modern UI
 
-### `npm run build`
+* Clean **dark theme UI**
+* Rounded cards, shadows, smooth hover effects
+* Structured and intuitive layout
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🧠 Smart Text Node
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Auto-resizing input field
+* Dynamic variable detection using `{{variable}}`
+* Automatically creates input handles for detected variables
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🔗 Interactive Pipeline Builder
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Drag-and-drop node creation
+* Visual edge connections between nodes
+* Real-time graph construction
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### ⚡ Backend Integration
 
-## Learn More
+* Built with **FastAPI**
+* Endpoint: `/pipelines/parse`
+* Computes:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  * Number of nodes
+  * Number of edges
+  * Whether the graph is a **DAG**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+### 🔍 DAG Validation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Implemented using **DFS cycle detection**
+* Detects cycles and validates pipeline correctness
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🛠 Tech Stack
 
-### Making a Progressive Web App
+**Frontend:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* React
+* React Flow
+* Zustand (state management)
 
-### Advanced Configuration
+**Backend:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* Python
+* FastAPI
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## ▶️ How to Run
 
-### `npm run build` fails to minify
+### 🔹 Frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+cd frontend
+npm install
+npm start
+```
+
+### 🔹 Backend
+
+```bash
+cd backend
+pip install fastapi uvicorn
+uvicorn main:app --reload
+```
+
+---
+
+## 🧪 Usage
+
+1. Add nodes from the toolbar
+2. Connect nodes visually
+3. Use the Text node with variables like:
+
+   ```
+   Hello {{name}} {{age}}
+   ```
+4. Click **Submit Pipeline**
+5. View:
+
+   * Node count
+   * Edge count
+   * DAG validation result
+
+---
+
+## 📸 Preview
+
+*Add a screenshot here (optional but recommended)*
+
+---
+
+## 🧠 Key Highlights
+
+* Designed a **scalable node abstraction system**
+* Implemented **dynamic UI behavior** based on user input
+* Integrated frontend with backend for **real-time validation**
+* Built efficient **graph cycle detection logic**
+
+---
+
+## 📌 Notes
+
+* `node_modules`, build files, and environment files are excluded from the repository
+* Project runs locally as per assessment requirements
+
+---
+
+## 👤 Author
+
+**Pavni Srivastava**
+Data Science & Engineering Student
+---
+
+## 🚀 Future Improvements
+
+* Deploy frontend and backend (Vercel + Railway)
+* Add real-time pipeline execution
+* Improve UX with animations and notifications
+
+---
